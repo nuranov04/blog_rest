@@ -10,7 +10,8 @@ class Like(models.Model):
     post = models.ForeignKey(
         Post,
         on_delete=models.CASCADE,
-        related_name='like'
+        related_name='like',
+        unique=True
     )
     user = models.ForeignKey(
         User,
