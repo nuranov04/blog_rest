@@ -1,8 +1,5 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from django.http import HttpResponse
-from rest_framework import status
-from rest_framework.response import Response
 
 from apps.posts.models import Post
 
@@ -19,6 +16,7 @@ class Like(models.Model):
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
+        related_name="likes"
     )
     create_at = models.DateTimeField(
         auto_now_add=True
