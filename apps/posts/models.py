@@ -14,7 +14,7 @@ class Post(models.Model):
         max_length=256,
     )
     description = models.TextField()
-    image = models.ImageField()
+    image = models.URLField()
     create_at = models.DateTimeField(
         auto_now_add=True
     )
