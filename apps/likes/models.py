@@ -11,12 +11,10 @@ class Like(models.Model):
         Post,
         on_delete=models.CASCADE,
         related_name='like',
-        unique=True
     )
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name='like'
     )
     create_at = models.DateTimeField(
         auto_now_add=True
