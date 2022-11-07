@@ -22,6 +22,7 @@ class PostDetailSerializer(serializers.ModelSerializer):
         )
 
     def get_total_likes(self, instance):
+        print(instance.like.all().count())
         return instance.like.all().count()
 
 

@@ -24,7 +24,7 @@ class PostApiViewSet(GenericViewSet,
     ]
     filterset_fields = [
         'id', "user",
-        "create_at", "total_likes"
+        "create_at"
     ]
     ordering_fields = [
         'id', "create_at",
