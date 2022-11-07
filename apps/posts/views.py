@@ -1,5 +1,5 @@
 from rest_framework.viewsets import GenericViewSet
-from rest_framework.mixins import ListModelMixin, RetrieveModelMixin, DestroyModelMixin
+from rest_framework.mixins import ListModelMixin, RetrieveModelMixin, DestroyModelMixin, CreateModelMixin
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import filters
 
@@ -10,7 +10,8 @@ from .serializers import PostSerializer, PostDetailSerializer
 class PostApiViewSet(GenericViewSet,
                      ListModelMixin,
                      RetrieveModelMixin,
-                     DestroyModelMixin):
+                     DestroyModelMixin,
+                     CreateModelMixin):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
     search_fields = [

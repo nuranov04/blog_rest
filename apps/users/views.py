@@ -1,5 +1,5 @@
 from rest_framework.viewsets import GenericViewSet
-from rest_framework.mixins import ListModelMixin, RetrieveModelMixin
+from rest_framework.mixins import ListModelMixin, RetrieveModelMixin, CreateModelMixin
 
 from apps.users.serializers import UserSerializer, UserDetailSerializer
 from apps.users.models import User
@@ -7,7 +7,8 @@ from apps.users.models import User
 
 class UserApiViewSet(GenericViewSet,
                      ListModelMixin,
-                     RetrieveModelMixin):
+                     RetrieveModelMixin,
+                     CreateModelMixin):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
